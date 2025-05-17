@@ -13,7 +13,7 @@ body {
 
 /* Стили для заголовка */
 header {
-    background: #6AE3E9;
+    background: #985ACE;
     color: #FDFFFD;
     padding: 20px 0;
     text-align: center;
@@ -43,7 +43,7 @@ section {
 }
 
 h3 {
-    border-bottom: 2px solid #6AE3E9;
+    border-bottom: 2px solid #985ACE;
     padding-bottom: 10px;
     margin-bottom: 15px;
 }
@@ -61,7 +61,7 @@ th, td {
 }
 
 th {
-    background-color: #6AE3E9;
+    background-color: #985ACE;
     color: white;
 }
 
@@ -79,7 +79,7 @@ li {
 }
 
 li:last-child {
-    border-bottom: none; /
+    border-bottom: none; 
 }
 
 
@@ -96,7 +96,7 @@ a:hover {
 footer {
     text-align: center;
     padding: 10px 0;
-    background: #6AE3E9;
+    background: #985ACE;
     color: white;
     position: relative; 
 }
