@@ -9,9 +9,9 @@ async function renderTable() {
 
         const container = document.createElement('div');
         container.style.display = 'grid';
-        container.style.border = '0.5px solid #985ACE';
+        container.style.border = '0.5px solid #ddd';
         container.style.width = '80%';
-        container.style.margin ='0 auto';
+        container.style.margin ='60px auto';
 
         const headers = Object.keys(data[0]);
 
@@ -21,10 +21,11 @@ async function renderTable() {
         const headerDiv = document.createElement('div');
         headerDiv.innerText = header;
         headerDiv.style.fontWeight = 'bold';
-        headerDiv.style.border = '0.5px solid #985ACE';
-        headerDiv.style.padding = '4px';
+        headerDiv.style.border = '0.5px solid #ddd';
+        headerDiv.style.padding = '8px';
         headerDiv.style.backgroundColor = '#985ACE';
-        headerDiv.style.color = 'white'
+        headerDiv.style.color = 'white';
+        headerDiv.style.textAlign = 'center';
         container.appendChild(headerDiv);
         });
 
@@ -32,8 +33,8 @@ async function renderTable() {
             headers.forEach(header => {
                 const cellDiv = document.createElement('div');
                 cellDiv.innerText = item[header];
-                cellDiv.style.border = '0.5px solid #985ACE';
-                cellDiv.style.padding = '4px';
+                cellDiv.style.border = '0.5px solid #ddd';
+                cellDiv.style.padding = '8px';
                 container.appendChild(cellDiv);
             });
         });
