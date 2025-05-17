@@ -9,9 +9,9 @@
 <body>
     <header class="header__student">
         <ul class="ul__student">
-            <li> Расписание </li>
-            <li> Успеваемость </li>
-            <li> Настройки </li>
+            <li>Расписание</li>
+            <li>Успеваемость</li>
+            <li>Настройки</li>
         </ul>
     </header>
     <main>
@@ -39,17 +39,108 @@
             <ul id="mini-tests-list"></ul>
         </section>
         <div>
-            <button class="buttonmodalrec" id="buttonmodalrec"> Получить рекомендации</button>
+            <button class="buttonmodalrec" id="buttonmodalrec">Давай подтянем твои знания</button>
         </div>
 
         <div class="studentmodal" id="studentmodal"> 
             <div class="studentmodalcontent" id="studentmodalcontent">
-                <h3 class="student__tittle">Рекомендации по улучшению оценок </h3>
+                <h3 class="student__title">Рекомендации по улучшению оценок</h3>
             </div>
         </div>
     </main>
-    <script src="student.js"></script>
-    <script src="student1.js"></script>
+    <script>
+        const studentData = {
+            "subject": "Математика",
+            "student": {
+                "name": "Иван Иванов",
+                "class": "6",
+                "grades": [
+                    { "topic": "Дроби", "grade": 5, "date": "2025-09-15" },
+                    { "topic": "Сложение дробей", "grade": 4, "date": "2025-09-22" },
+                    { "topic": "Вычитание дробей", "grade": 3, "date": "2025-09-29" },
+                    { "topic": "Умножение дробей", "grade": 5, "date": "2025-10-06" },
+                    { "topic": "Деление дробей", "grade": 4, "date": "2025-10-13" },
+                    { "topic": "Углы", "grade": 3, "date": "2025-10-20" },
+                    { "topic": "Проценты", "grade": 5, "date": "2025-10-27" },
+                    { "topic": "Десятичные дроби", "grade": 3, "date": "2025-11-03" }
+                ],
+                "revision_topics": [
+                    "1. Основы работы с дробями",
+                    "2. Сложение дробей с одинаковыми знаменателями",
+                    "3. Сложение дробей с разными знаменателями",
+                    "4. Вычитание дробей с одинаковыми знаменателями",
+                    "5. Вычитание дробей с разными знаменателями",
+                    "6. Умножение дробей",
+                    "7. Деление дробей",
+                    "8. Углы: определение и виды",
+                    "9. Проценты: понятие и расчет",
+                    "10. Десятичные дроби и их преобразование"
+                ],
+                "mini_tests": [
+                    { "topic": "Дроби", "link": "https://example.com/mini-test-drobi" },
+                    { "topic": "Углы", "link": "https://example.com/mini-test-ugly" },
+                    { "topic": "Проценты", "link": "https://example.com/mini-test-procenty" },
+                    { "topic": "Десятичные дроби", "link": "https://example.com/mini-test-desyatochnye-drobi" }
+                ]
+            }
+        };
+
+        // Заполнение данных на странице
+        document.getElementById('subject-name').textContent = studentData.subject;
+
+        const gradesTableBody = document.getElementById('grades-table').querySelector('tbody');
+        studentData.student.grades.forEach(grade => {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${grade.topic}</td><td>${grade.grade}</td><td>${grade.date}</td>`;
+            gradesTableBody.appendChild(row);
+        });
+
+        const revisionTopicsList = document.getElementById('revision-topics-list');
+        studentData.student.revision_topics.forEach(topic => {
+            const listItem = document.createElement('li');
+            listItem.textContent = topic;
+            revisionTopicsList.appendChild(listItem);
+        });
+
+        const miniTestsList = document.getElementById('mini-tests-list');
+        studentData.student.mini_tests.forEach(test => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `<a href="${test.link}" target="_blank">${test.topic}</a>`;
+            miniTestsList.appendChild(listItem);
+        });
+
+        const studentModal = document.getElementById("studentmodal");
+        const openModal = document.getElementById("buttonmodalrec");
+        openModal.addEventListener("click", async () => {
+            studentModal.style.display = "grid";
+            const lowGrades = studentData.student.grades.filter(g => g.grade < 4);
+
+            if (lowGrades.length === 0) {
+                studentModal.innerHTML += `<p>У тебя нет слабых тем. Отличная работа!</p>`;
+                return;
+            }
+
+            lowGrades.forEach(({ topic }) => {
+                const miniTest = studentData.student.mini_tests.find(test => test.topic === topic);
+                const theoryLink = `https://example.com/theory/${topic.toLowerCase().replace(/\s+/g, '-')}`;
+                const additionalLink = `https://example.com/material/${topic.toLowerCase().replace(/\s+/g, '-')}`;
+                studentModal.innerHTML += `
+                    <div class="recommendation__block">
+                        <p>Твоя слабая тема: ${topic}</p>
+                        <p>Посмотри теорию: <a href="${theoryLink}" target="_blank">${theoryLink}</a></p>
+                        <p>Посмотри доп. материал: <a href="${miniTest ? miniTest.link : additionalLink}" target="_blank">${miniTest ? miniTest.link : additionalLink}</a></p>
+                    </div>
+                `;
+            });
+        });
+
+        studentModal.addEventListener("click", (event) => {
+            const modalContent = document.getElementById("studentmodalcontent");
+            if (!modalContent.contains(event.target)) {
+                studentModal.style.display = "none";
+            }
+        });
+    </script>
     <footer>
         <p>&copy; 2025 Электронный дневник. Все права защищены.</p>
     </footer>
