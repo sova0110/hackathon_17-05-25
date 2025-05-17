@@ -1,14 +1,109 @@
-#ЛК учителя
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="teacher_styles.css">
 </head>
 <body>
+    <header>
+        <img src="https://www.clipartmax.com/png/full/171-1715896_paper-book-icon-textbook-icon.png" alt="Иконка книги" width="70" height="70" style="margin-left: 50px;">
+        <nav class="header_container">
+            <ul>
+                <li><a href="#schedule">Расписание</a></li>
+                <li><a href="#journal">Журнал</a></li>
+                <li><a href="#settings">Настройки</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container"></div>
     <script src='teacher.js'></script>
+    <div class="results">
+        <h1>Средние оценки и успеваемость</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Тема</th>
+                    <th>Средняя оценка</th>
+                    <th>Процент успеваемости</th>
+                </tr>
+            </thead>
+            <tbody id="results"></tbody>
+        </table>
+    
+        <script>
+            fetch('teacher2.json')
+                .then(response => response.json())
+                .then(data => {
+                    const subjects = ["Сложение дробей", "Вычитание дробей", "Умножение дробей", "Деление дробей"];
+                    const averages = {};
+                    const passingScore = 4; // Успешная оценка
+    
+                    subjects.forEach(subject => {
+                        averages[subject] = { total: 0, count: 0, passing: 0 };
+                    });
+    
+                    data.students.forEach(student => {
+                        subjects.forEach(subject => {
+                            const grade = student.grades[subject];
+                            averages[subject].total += grade;
+                            averages[subject].count += 1;
+                            if (grade >= passingScore) {
+                                averages[subject].passing += 1;
+                            }
+                        });
+                    });
+    
+                    const resultsTbody = document.getElementById('results');
+                    subjects.forEach(subject => {
+                        const average = averages[subject].total / averages[subject].count;
+                        const passingPercentage = (averages[subject].passing / averages[subject].count) * 100;
+    
+                        const row = `
+                            <tr>
+                                <td>${subject}</td>
+                                <td>${average.toFixed(2)}</td>
+                                <td>${passingPercentage.toFixed(2)}%</td>
+                            </tr>
+                        `;
+                        resultsTbody.innerHTML += row;
+                    });
+                })
+                .catch(error => console.error('Ошибка при загрузке данных:', error));
+        </script>
+        <button id="popupButton">Открыть ИИ асситента</button>
 
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Привет, в данном классе возникли проблемы с темами умножение дробей и вычитание дробей. Я могу предложить игру-квиз для тренировки данных тем.</p>
+            </div>
+        </div>
+
+        <script>
+            const modal = document.getElementById("myModal");
+            const btn = document.getElementById("popupButton");
+            const span = document.getElementsByClassName("close")[0];
+
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    </div>
+
+    </div>
+    
 </body>
 </html>
+
