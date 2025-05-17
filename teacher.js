@@ -10,7 +10,8 @@ async function renderTable() {
         const container = document.createElement('div');
         container.style.display = 'grid';
         container.style.border = '1px solid #000';
-        container.classList.add('grid');
+        container.style.width = '80%';
+        container.style.margin ='0 auto';
 
         const headers = Object.keys(data[0]);
 
@@ -37,7 +38,7 @@ async function renderTable() {
 
         const targetContainer = document.querySelector('.container');
         if (targetContainer) {
-            targetContainer.innerHTML = ''; // очищаем предыдущий контент
+            targetContainer.innerHTML = ''; 
             targetContainer.appendChild(container);
         } else {
             console.log(new XMLSerializer().serializeToString(container));
