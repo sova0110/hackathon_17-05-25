@@ -13,7 +13,7 @@
             <h1>Школьный Дневник</h1>
         </div>
         
-        <form class="login-form">
+        <form class="login-form" id="loginForm">
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" required placeholder="Введите ваш email">
 
@@ -22,11 +22,33 @@
             
             <a href="#" class="forgot-password">Забыли пароль?</a>
 
+            <div class="role-selection">
+                <label>
+                    <input type="radio" name="role" value="student" checked> УЧЕНИК
+                </label>
+                <label>
+                    <input type="radio" name="role" value="teacher"> УЧИТЕЛЬ
+                </label>
+            </div>
+
             <button type="submit" class="btn">Войти</button>
             <button type="button" class="btn register">Зарегистрироваться</button>
         </form>
         
         <hr class="line">
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            const role = document.querySelector('input[name="role"]:checked').value;
+            if (role === 'student') {
+                window.location.href = 'student.html';
+            } else {
+                window.location.href = 'teacher.html';
+            }
+        });
+    </script>
 </body>
 </html>
