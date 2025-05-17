@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Электронный дневник</title>
-    <link rel="stylesheet" href="style/student.css">
     <link rel="stylesheet" href="student.css">
 </head>
 <body>
@@ -15,18 +14,6 @@
             <li> Успеваемость </li>
             <li> Настройки </li>
         </ul>
-    <header>
-        <h1>Электронный дневник ученика</h1>
-        <h2 id="student-info"></h2>
-    </header>
-        <div> 
-            <h2> Дневник ученика </h2>
-            <button class="button__modal__rec" id="button__modal__rec"> Получить рекомендации</button>
-        </div> <!-- дневник у ученика -->
-        <div class="student__modal" id="student__modal"> 
-        
-            <h3 class="student__tittle">Рекомендации по улучшению оценок </h3>
-        </div>
     <main>
         <section class="grades">
             <h3>Оценки по предмету: <span id="subject-name"></span></h3>
@@ -51,7 +38,13 @@
             <h3>Мини-тесты:</h3>
             <ul id="mini-tests-list"></ul>
         </section>
-
+        <div>
+            <button class="button__modal__rec" id="button__modal__rec"> Получить рекомендации</button>
+        </div>
+        <div class="student__modal" id="student__modal"> 
+        
+            <h3 class="student__tittle">Рекомендации по улучшению оценок </h3>
+        </div>
     </main>
     <script src="student.js"></script>
     <footer>
