@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Электронный дневник</title>
     <link rel="stylesheet" href="style/student.css">
+    <link rel="stylesheet" href="student.css">
 </head>
 <body>
     <header class="header__student">
@@ -14,6 +15,9 @@
             <li> Успеваемость </li>
             <li> Настройки </li>
         </ul>
+    <header>
+        <h1>Электронный дневник ученика</h1>
+        <h2 id="student-info"></h2>
     </header>
         <div> 
             <h2> Дневник ученика </h2>
@@ -23,8 +27,36 @@
         
             <h3 class="student__tittle">Рекомендации по улучшению оценок </h3>
         </div>
+    <main>
+        <section class="grades">
+            <h3>Оценки по предмету: <span id="subject-name"></span></h3>
+            <table id="grades-table">
+                <thead>
+                    <tr>
+                        <th>Тема</th>
+                        <th>Оценка</th>
+                        <th>Дата</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section class="revision-topics">
+            <h3>Темы для повторения:</h3>
+            <ul id="revision-topics-list"></ul>
+        </section>
+
+        <section class="mini-tests">
+            <h3>Мини-тесты:</h3>
+            <ul id="mini-tests-list"></ul>
+        </section>
 
     </main>
     <script src="student.js"></script>
+    <footer>
+        <p>&copy; 2025 Электронный дневник. Все права защищены.</p>
+    </footer>
+    
 </body>
 </html>
