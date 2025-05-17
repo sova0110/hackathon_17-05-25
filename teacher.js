@@ -1,5 +1,5 @@
 
-async function renserTable() {
+async function renderTable() {
     try {
         const response = await fetch('teacher.json');
         if (!response.ok) {
@@ -10,6 +10,7 @@ async function renserTable() {
         const container = document.createElement('div');
         container.style.display = 'grid';
         container.style.border = '1px solid #000';
+        container.classList.add('grid');
 
         const headers = Object.keys(data[0]);
 
@@ -34,7 +35,7 @@ async function renserTable() {
             });
         });
 
-        const targetContainer = document.querySelector('.gridContainer');
+        const targetContainer = document.querySelector('.container');
         if (targetContainer) {
             targetContainer.innerHTML = ''; // очищаем предыдущий контент
             targetContainer.appendChild(container);
@@ -45,3 +46,5 @@ async function renserTable() {
         console.error('Ошибка при загрузке или отображении данных:', error);
     }
 }
+
+renderTable()
