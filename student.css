@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #FDFFFD;
+    color: #032843;
+}
+
+/* Стили для заголовка */
+header {
+    background: #6AE3E9;
+    color: #FDFFFD;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+/* Стили для основного контента */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h3 {
+    border-bottom: 2px solid #6AE3E9;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Стили для таблицы оценок */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #6AE3E9;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+ul {
+    list-style-type: none; 
+}
+
+li {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+li:last-child {
+    border-bottom: none; /
+}
+
+
+a {
+    color: #6AE3E9;
+    text-decoration: none; 
+}
+
+a:hover {
+    text-decoration: underline; 
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #6AE3E9;
+    color: white;
+    position: relative; 
+}
