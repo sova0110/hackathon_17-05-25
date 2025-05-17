@@ -1,29 +1,29 @@
-.header__student{
-    height: 150px;
-    background-color:#985ACE;
+.header__student {
+  height: 150px;
+  background-color: #985ace;
 }
 .ul__student {
-    color: #FDFFFD;
-    display: grid;
-    grid-auto-flow: column;
-    align-items: center;
+  color: #fdfffd;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
 }
-.student__modal{
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    width: 90vw; 
-    max-width: 1200px; 
-    max-height: 800px; 
-    border-radius: 30px;
-    background: #E1E1E1;
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    overflow: auto;
+.student__modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 1200px;
+  max-height: 800px;
+  border-radius: 30px;
+  background: #e1e1e1;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
 }
-.student__tittle{
-align-self: start;
+.student__tittle {
+  align-self: start;
 }
