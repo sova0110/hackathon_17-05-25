@@ -21,8 +21,14 @@
         <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">
         <img src="https://logo.svgcdn.com/d/java-original-wordmark-8x.png" height="50" width="50">
     </div>
+  <h3>Страница аутентификации пользователей (реализована так же на бэкенде)</h3>
   <img src="/images_for_readme/log_in.png" height="380">
-  <img src="./images/stars2.jpg" height="380">
-  <img src="./images/stars3.jpg" height="380">
-  <img src="./images/stars4.jpg" height="380">
+  <h3>Страница учителя вывод успеваемости</h3>
+  <img src="/images_for_readme/teacher_marks.png" height="380">
+  <h3>Страница учителя анализ успеваемости ИИ-помощником</h3>
+  <img src="/images_for_readme/teacher_analysis.png" height="380">
+  <h3>При нажатии на кнопку переход в чат бот</h3>
+  <img src="/images_for_readme/teacher_analysis2.png" height="380">
+  <h3>Анализ Эмоциональноо состояния класса</h3>
+  <img src="/images_for_readme/teacher_emotions.png" height="380">
 </div>
