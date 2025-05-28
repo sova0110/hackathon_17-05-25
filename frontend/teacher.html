@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="teacher_styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -100,6 +101,46 @@
                 }
             }
         </script>
+        <h1>Анализ эмоционального состояния класса</h1>
+        <canvas id="myChart" width="400" height="200"></canvas>
+        <div class="chart_container">
+            <script>
+                const ctx = document.getElementById('myChart').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Тревожность', 'Взаимоотношение в коллективе', 'Буллинг', 'Проблемы в семье', 'Проблемы в учебе'],
+                        datasets: [{
+                            label: 'Процент',
+                            data: [63, 78, 35, 23, 15],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(255, 99, 132, 0.2)', // Выделяем буллинг
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(75, 192, 192, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)', // Выделяем буллинг
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(75, 192, 192, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+            
+        </div>
     </div>
 
     </div>
