@@ -1,16 +1,16 @@
 <div id="header" align="center">
-  <h1> Funnu predictions game</h1>
-  <p>A game with pleasant predictions in pure JavaScript.
-    20 stars are randomly drawn on the screen, each star has a random prediction from the data.json file.
-    When you click on a star, the star disappears, and the text of the prediction appears in the middle of the screen.
-    Predictions can be repeated in one session.
-    The project uses the math.random method for random prediction by clicking on a star and random placement of stars on the screen.
-  </p>
-  <p>Игра с приятными предсказаниями на чистом JavaScript.
-      На экране рандомным образом отрисованы 20 звезд, за каждой из звезд закреплено рандомное предсказание из файла data.json.
-      При клике на звезду звезда исчезает, в середине экрана появляется текст предсказания.
-      Предсказания за одну сессию могут повторяться.
-      В проекте использован метод math.random для случайного предсказания по клику на звезду и рандомного расположения звезд на экране.
+  <h1> Проект интереактивный школьный дненвник для ученика/журнал для учителя с использованием ИИ технологий</h1>
+  <h2>Идея: интерактивный дневник/жирнал, который
+  - отслеживает успеваемость учеников, дает рекомендации по обучению как ученику,так и учителю
+  - отслеживает эмоциональное обстановку в коллективе (анонимно) и дает рекомендации по улучшению
+  - сигнализирует учителю о проблемах у классе (буллинг, проблемы в семье и др)
+  - и дает рекомендации как решить данные проблемы, как на стороне ученика, так и учителя (переход в чат-бот с ИИ по кнопке</h2>
+  <p>
+  Проект выполнен вт рамках хакатона, за 6 часов рабочего времени (от идеи до реализаци).
+  Команда проекта состоит из 4 frontend разработчиков, 1 backend разработчика и 1 менеджера проектов
+  На стороне фронетда выполнена верстка личных станиц дневника (для ученика)/журнала(для учителя).
+  На стороне бэкенда выполнена настройка регистрации и авторизации пользователей, с присвоением ролей ученик/учитель.
+  Кнопки открыть ИИ асситента ведут в чат-бот. (настройка чат-бота в процессе подключения)
   </p>
   <h2>Used technologies/С использованием:</h2> 
     <div id=technologies>
@@ -18,8 +18,9 @@
         <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white">
         <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white">
         <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">
+        <img src="https://s3-alpha.figma.com/hub/file/2168893076433463439/c4dcef19-0ae5-4291-bb16-0221a5f7faf5-cover.png" height="50" width="50">
     </div>
-  <img src="./images/stars1.jpg" height="380">
+  <img src="/images_for_readme/log_in.png" height="380">
   <img src="./images/stars2.jpg" height="380">
   <img src="./images/stars3.jpg" height="380">
   <img src="./images/stars4.jpg" height="380">
