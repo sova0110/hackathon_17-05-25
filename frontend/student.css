@@ -144,3 +144,7 @@ footer {
 .buttonmodalrec:hover {
   background-color: rgba(152, 90, 206, 0.8);
 }
+#buttonmodalrec1 {
+  margin-bottom: 40px;
+  text-align: center;
+}

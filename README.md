@@ -31,4 +31,12 @@
   <img src="/images_for_readme/teacher_analysis2.png" height="380">
   <h3>Анализ Эмоциональноо состояния класса</h3>
   <img src="/images_for_readme/teacher_emotions.png" height="380">
+  <h3>Дневник ученика, все оценки по выранному предмету</h3>
+  <img src="/images_for_readme/student_marks.png" height="380">
+  <h3>Темы для повторения, на основе рекомендации ИИ-помощника</h3>
+  <img src="/images_for_readme/student_topics.png" height="380">
+  <h3>Тесты, на основе рекомендации ИИ-помощника</h3>
+  <img src="/images_for_readme/student_tests.png" height="380">
+  <h3>Внизу кнопка для перехода в ИИ-помощник что б обсудить личные проблемы</h3>
+  <p>При реализации были использованы json библиотеки для вывода результатов, т.к.  ввиду ограниченности времени базы данных были не созданы. Вопрос подключения реальноо ИИ-помощника в разработке.</p>
 </div>
